@@ -1,6 +1,6 @@
 package com.tyg.dao;
 
-import com.tyg.entity.User;
+import com.tyg.pojo.User;
 
 import java.util.List;
 

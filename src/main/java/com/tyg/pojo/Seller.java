@@ -1,4 +1,4 @@
-package com.tyg.entity;
+package com.tyg.pojo;
 
 import lombok.Data;
 
