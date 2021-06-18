@@ -1,10 +1,10 @@
-package com.tyg.service;
+package com.tyg.dao;
 
 import com.tyg.pojo.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface IUserDao {
 
     public List<User> getUsers();
     public User getUserByName(String user_name);

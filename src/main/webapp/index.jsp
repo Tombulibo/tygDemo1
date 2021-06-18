@@ -8,15 +8,14 @@
     <title>Title</title>
 </head>
 <body>
-<h1><%= "Info" %>
-</h1>
-<br/>
 
 
-    <form action="user/find" method="post">
+<!--
+    <form action="user/getUserByName" method="post">
         <input name="user_name"><br>
         <input type="submit" value="查找">
     </form>
+-->
 
 
 
