@@ -4,24 +4,24 @@
 <mapper namespace="com.tyg.dao.IUserDao">
 
     <insert id="addUser" parameterType="User" useGeneratedKeys="true" keyProperty="user_name">
-        insert into user(user_name,password,email,telephone) values (#{user_name},#{password},#{email},#{telephone});
+        insert into user(username,password,email,telephone) values (#{username},#{password},#{email},#{telephone});
     </insert>
 
     <update id="updateUser">
         update user
         <set>
-            <if test="user_name != null">
-                user_name = #{user_name},
+            <if test="username != null">
+                username = #{username},
             </if>
             <if test="password != null">
                 password = #{password},
             </if>
         </set>
-        where user_name = #{user_name}
+        where username = #{username}
     </update>
 
     <delete id="deleteUser">
-        delete from user where user_name = #{user_name}
+        delete from user where username = #{username}
     </delete>
 
     <select id="getUsers" resultType="User">
@@ -29,6 +29,6 @@
     </select>
 
     <select id="getUserByName" resultType="User">
-        select * from user where user_name = #{user_name}
+        select * from user where username = #{username}
     </select>
 </mapper>

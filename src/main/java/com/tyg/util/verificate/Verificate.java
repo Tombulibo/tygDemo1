@@ -7,12 +7,16 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Random;
 
-
+/**
+ * Created by 程元通 on 2021/06/18.
+ */
 public class Verificate {
 
         // 验证码图片中可以出现的字符集，可根据需要修改
         private char mapTable[] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
                 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
+        private int colorTable[] = { 0x9FDCB1, 0x04F80D, 0xF80482, 0xF89F04};
 
         /**
          * 功能:生成彩色验证码图片 参数width为生成图片的宽度,参数height为生成图片的高度,参数为页面的输出流
@@ -25,12 +29,16 @@ public class Verificate {
             BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
             // 获取图形上下文
             Graphics g = image.getGraphics();
-            // 设定背景色
-            g.setColor(new Color(0x9FDCB1));
+
+            // 随机设定背景色
+
+            int color = colorTable[(int) (colorTable.length * Math.random())];
+            g.setColor(new Color(color));
             g.fillRect(0, 0, width, height);
             // 画边框
-            g.setColor(new Color(0x9FDCB1));
+            g.setColor(new Color(color));
             g.drawRect(0, 0, width - 1, height - 1);
+
             // 取随机产生的认证码
             String strEnsure = "";
             // 4代表4位验证码,如果要生成更多位的认证码,则加大数值
@@ -48,9 +56,9 @@ public class Verificate {
             g.drawString(str, 35, 18);
             str = strEnsure.substring(3, 4);
             g.drawString(str, 45, 15);
-            // 随机产生10个干扰点
+            // 随机产生100个干扰点
             Random rand = new Random();
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 100; i++) {
                 int x = rand.nextInt(width);
                 int y = rand.nextInt(height);
                 g.drawOval(x, y, 1, 1);

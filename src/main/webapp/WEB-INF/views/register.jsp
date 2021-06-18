@@ -67,10 +67,10 @@
                     <form class="form-horizontal" id="form" action="${pageContext.request.contextPath}/user/registerResult"
                           method="post">
                         <div class="form-group">
-                            <!-- <label for="inputName" class="col-sm-2 control-label">昵称</label> -->
+                            <!-- <label for="inputName" class="col-sm-2 control-label">用户名</label> -->
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="user_name"
-                                       name="user_name" placeholder="用户名">
+                                <input type="text" class="form-control" id="username"
+                                       name="username" placeholder="用户名">
                             </div>
                         </div>
                         <div class="form-group">
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <!-- <label for="inputTel" class="col-sm-2 control-label">联系方式</label> -->
+                            <!-- <label for="inputTel" class="col-sm-2 control-label">电话号码</label> -->
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="telephone"
                                        name="telephone" placeholder="电话号码">

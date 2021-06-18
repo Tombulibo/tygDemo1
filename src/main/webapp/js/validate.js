@@ -7,7 +7,9 @@ $.validator.setDefaults({
 $(document).ready(function() {
 	$('#form').validate({
 		rules: {
-			username: "required",
+			username: {
+				required: true,
+			},
             telephone: {
 				required: true,
 			},
