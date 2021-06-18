@@ -47,7 +47,8 @@ public class UserController {
             model.addAttribute("errorMsg", "密码错误");
             return "login";
         }
-        return "successLogin";
+        session.setAttribute("user",rightUser);
+        return "main";
     }
     @RequestMapping("register")
     public String register() {
@@ -67,6 +68,26 @@ public class UserController {
             userService.addUser(user);
             return  "login";
         }
+    }
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request){
+        HttpSession session=request.getSession();
+        session.removeAttribute("user");
+        return "login";
+    }
+    @RequestMapping("/information")
+    public String information(Model userModel,HttpServletRequest request){
+        HttpSession session=request.getSession();
+        User user;
+        user=(User) session.getAttribute("user");
+        if (user==null)
+        {
+            return "login";
+        }
+        String username =user.getUsername();
+        user=userService.getUserByName(username);
+        userModel.addAttribute("user",user);
+        return "information";
     }
     @RequestMapping("/toEdit")
     public String toEdit(Model model,@RequestParam("username") String username) {

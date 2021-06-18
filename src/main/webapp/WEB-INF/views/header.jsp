@@ -13,24 +13,27 @@
 
         <ul class="nav nav-pills">
             <c:if test="${empty sessionScope.user}">
-                <li><a href="${pageContext.request.contextPath}/login" style="color: #F22E00">请登录</a></li>
+                <li><a href="${pageContext.request.contextPath}/user/login" style="color: #F22E00">请登录</a></li>
             </c:if>
             <c:if test="${!empty sessionScope.user}">
                 <li class="info-a">
-                    <a href="${pageContext.request.contextPath}/information" style="color: #F22E00">
+                    <a href="${pageContext.request.contextPath}/user/information" style="color: #F22E00">
                             ${sessionScope.user.username}
                         <span class="glyphicon glyphicon-triangle-bottom" style="font-size: 5px;margin-left: 7px;" aria-hidden="true">
                     </span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="${pageContext.request.contextPath}/information">账户管理</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/information">账户管理</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="${pageContext.request.contextPath}/logout" class="login-out">退出登录</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/logout" class="login-out">退出登录</a></li>
                     </ul>
                 </li>
             </c:if>
 
-            <li><a href="${pageContext.request.contextPath}/register">注册</a></li>
+            <c:if test="${!empty sessionScope.user}">
+                <%session.removeAttribute("user");%>
+            </c:if>
+            <li><a href="${pageContext.request.contextPath}/user/register">注册</a></li>
         </ul>
     </div>
     <div class="col-md-8">
@@ -61,7 +64,9 @@
                         class="icon-bar"></span> <span class="icon-bar"></span> <span
                         class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="${pageContext.request.contextPath}/main"><!-- <img alt="Brand" style="display: inline-block;" src="./image/tao.jpg" width="20" height="20"> --><span class="logo-word">淘身边</span></a>
+                <a class="navbar-brand" href="${pageContext.request.contextPath}/main">
+                <!-- <img alt="Brand" style="display: inline-block;" src="./image/tao.jpg" width="20" height="20"> -->
+                <span class="logo-word">通逸购</span></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

@@ -50,7 +50,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>通逸购-欢迎登录</title>
+    <title>欢迎登录-通逸购</title>
     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
@@ -92,7 +92,7 @@
 </script>
 
 
-<body onload="input_value()">
+<body>
 <div id="main" class="container">
     <div id="header">
         <%@ include file="header.jsp"%>
