@@ -54,10 +54,10 @@
 <body>
 <div id="main" class="container">
     <div id="header">
-        <%--<%@ include file="header.jsp"%>--%>
+        <%@ include file="header.jsp"%>
     </div>
     <div class="login">
-        <div class="row">
+        <div class="row" style="width: 1250px">
             <div class="col-md-6">
                 <img src="${pageContext.request.contextPath}/image/register.png" width="450" height="600" alt="" style="margin-left: 40px;">
             </div>
@@ -67,35 +67,35 @@
                     <form class="form-horizontal" id="form" action="${pageContext.request.contextPath}/user/registerResult"
                           method="post">
                         <div class="form-group">
-                            <!-- <label for="inputName" class="col-sm-2 control-label">用户名</label> -->
+                            <label for="username" class="col-sm-2 control-label">用户名</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="username"
                                        name="username" placeholder="用户名">
                             </div>
                         </div>
                         <div class="form-group">
-                            <!-- <label for="inputPassword" class="col-sm-2 control-label">密码</label> -->
+                            <label for="password" class="col-sm-2 control-label">密码</label>
                             <div class="col-sm-10">
                                 <input type="password" class="form-control" id="password"
                                        name="password" placeholder="密码">
                             </div>
                         </div>
                         <div class="form-group">
-                            <!-- <label for="confirmPassword" class="col-sm-2 control-label">确认密码</label> -->
+                            <label for="confirmPassword" class="col-sm-2 control-label">确认密码</label>
                             <div class="col-sm-10">
                                 <input type="password" class="form-control"
                                        id="confirmPassword" name="confirmPassword" placeholder="确认密码">
                             </div>
                         </div>
                         <div class="form-group">
-                            <!-- <label for="inputTel" class="col-sm-2 control-label">联系方式</label> -->
+                            <label for="email" class="col-sm-2 control-label">邮箱</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="email"
                                        name="email" placeholder="邮箱">
                             </div>
                         </div>
                         <div class="form-group">
-                            <!-- <label for="inputTel" class="col-sm-2 control-label">电话号码</label> -->
+                            <label for="telephone" class="col-sm-2 control-label">电话号码</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="telephone"
                                        name="telephone" placeholder="电话号码">
@@ -103,7 +103,7 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-sm-10">
+                            <div class="col-sm-offset-2 col-sm-10">
                                 <input type="hidden" name="flag" id="flag" value="1"> <input
                                     type="submit" class="btn btn-primary form-control" value="注册">
                                 <div class="error">

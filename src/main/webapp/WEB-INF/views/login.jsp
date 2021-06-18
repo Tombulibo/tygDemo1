@@ -95,7 +95,7 @@
 <body onload="input_value()">
 <div id="main" class="container">
     <div id="header">
-        <%---------<%@ include file="header.jsp"%>-----%>
+        <%@ include file="header.jsp"%>
     </div>
     <div class="login">
         <div class="row">
