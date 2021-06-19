@@ -30,10 +30,9 @@
                 </li>
             </c:if>
 
-            <c:if test="${!empty sessionScope.user}">
-                <%session.removeAttribute("user");%>
+            <c:if test="${empty sessionScope.user}">
+                <li><a href="${pageContext.request.contextPath}/user/register">注册</a></li>
             </c:if>
-            <li><a href="${pageContext.request.contextPath}/user/register">注册</a></li>
         </ul>
     </div>
     <div class="col-md-8">
