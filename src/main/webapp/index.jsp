@@ -8,7 +8,7 @@
     <title>Title</title>
 </head>
 <body>
-
+<jsp:forward page="/main"></jsp:forward>
 
 <!--
     <form action="user/getUserByName" method="post">
