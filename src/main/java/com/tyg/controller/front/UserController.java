@@ -1,4 +1,4 @@
-package com.tyg.controller.admin;
+package com.tyg.controller.front;
 
 import com.tyg.pojo.User;
 import com.tyg.service.UserService;

@@ -73,7 +73,7 @@
                  id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a class="a-color" href="${pageContext.request.contextPath}/main">首页</a></li>
-                    <li><a class="a-color" href="${pageContext.request.contextPath}/information">个人信息</a></li>
+                    <li><a class="a-color" href="${pageContext.request.contextPath}/user/information">个人信息</a></li>
                     <li class="dropdown"><a class="a-color" href="${pageContext.request.contextPath}/info/list"
                                             class="dropdown-toggle" data-toggle="dropdown" role="button"
                                             aria-haspopup="true" aria-expanded="false">我的订单 <span
