@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tyg.dao.CategoryDao">
+
+    <insert id="addCategory" parameterType="Category" useGeneratedKeys="true" keyProperty="cateID">
+        insert into category(cateID,cateName) values (#{cateID},#{cateName});
+    </insert>
+
+    <update id="updateCategory">
+        update category
+        <set>
+            <if test="cateID != null">
+                cateID = #{cateID},
+            </if>
+            <if test="cateName != null">
+                cateName = #{cateName},
+            </if>
+        </set>
+        where cateID = #{cateID}
+    </update>
+
+    <delete id="deleteCategory">
+        delete from category where cateID = #{cateID}
+    </delete>
+
+    <select id="getCategories" resultType="Category">
+        select * from category
+    </select>
+
+    <select id="getCategoryByID" resultType="Category">
+        select * from category where cateID = #{cateID}
+    </select>
+</mapper>

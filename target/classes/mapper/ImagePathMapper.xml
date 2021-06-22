@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tyg.dao.ImagePathDao">
+
+    <insert id="addImagePath" parameterType="ImagePath" useGeneratedKeys="true" keyProperty="pathID">
+        insert into imagepath(pathID,goodsID,path) values (#{pathID},#{goodsID},#{path});
+    </insert>
+
+    <delete id="deleteImagePath">
+        delete from imagepath where pathID = #{pathID}
+    </delete>
+
+    <select id="getImagePaths" resultType="ImagePath">
+        select * from imagepath
+    </select>
+
+    <select id="getImagePathByID" resultType="ImagePath">
+        select * from imagepath where pathID = #{pathID}
+    </select>
+
+    <select id="findImagePath" resultType="ImagePath">
+        select * from imagepath where goodsID = #{goodsID}
+    </select>
+</mapper>
