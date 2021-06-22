@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tyg.dao.GoodsDao">
+
+    <insert id="addGoods" parameterType="Goods" useGeneratedKeys="true" keyProperty="id">
+        insert into goods(id,name,shopID,categoryID,info,price,num) values (#{id},#{name},#{shopID},#{categoryID},#{info},#{price},#{num});
+    </insert>
+
+    <update id="updateGoods">
+        update goods
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="categoryID != null">
+                categoryID = #{categoryID},
+            </if>
+            <if test="info != null">
+                info = #{info},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="num != null">
+                num = #{num},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteGoods">
+        delete from goods where id = #{id}
+    </delete>
+
+    <select id="getGoods" resultType="Goods">
+        select * from goods
+    </select>
+
+    <select id="getGoodsByID" resultType="Goods">
+        select * from goods where id = #{id}
+    </select>
+
+    <select id="getGoodsByCategory" resultType="Goods">
+        select * from goods where categoryID = #{categoryID}
+    </select>
+</mapper>

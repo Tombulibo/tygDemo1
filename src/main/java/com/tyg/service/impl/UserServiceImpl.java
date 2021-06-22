@@ -1,7 +1,7 @@
 package com.tyg.service.impl;
 
 import com.tyg.pojo.User;
-import com.tyg.dao.IUserDao;
+import com.tyg.dao.UserDao;
 import com.tyg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private IUserDao userDao;
+    private UserDao userDao;
 
     @Override
     public List<User> getUsers(){

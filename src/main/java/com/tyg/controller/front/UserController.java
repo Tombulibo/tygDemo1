@@ -27,7 +27,7 @@ public class UserController {
         return "login";
     }
     @RequestMapping("/confirmLogin")
-    public String confirmLogin(HttpServletRequest request, Model model, @RequestParam("username") String user_name, @RequestParam("password") String password, @RequestParam("confirmlogo") String confirmlogo) {
+    public String confirmLogin(HttpServletRequest request, Model model, @RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("confirmlogo") String confirmlogo) {
 
         HttpSession session=request.getSession();
         String verificationCode = (String) session.getAttribute("certCode");
@@ -37,7 +37,7 @@ public class UserController {
             return "login";
         }
 
-        User rightUser = userService.getUserByName(user_name);
+        User rightUser = userService.getUserByName(username);
         //判断是否存在用户
         if (rightUser == null) {
             model.addAttribute("errorMsg", "该用户不存在");
@@ -55,9 +55,9 @@ public class UserController {
         return "register";
     }
     @RequestMapping("/registerResult")
-    public String registerResult(User user,@RequestParam("username") String user_name,Model registerResult) {
+    public String registerResult(User user,@RequestParam("username") String username,Model registerResult) {
 
-        User rightUser =userService.getUserByName(user_name);
+        User rightUser =userService.getUserByName(username);
 
         if (rightUser!=null)
         {

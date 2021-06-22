@@ -4,7 +4,7 @@ import com.tyg.pojo.User;
 
 import java.util.List;
 
-public interface IUserDao {
+public interface UserDao {
 
     public List<User> getUsers();
     public User getUserByName(String username);
