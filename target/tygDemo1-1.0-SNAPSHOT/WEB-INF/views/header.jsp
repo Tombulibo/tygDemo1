@@ -44,9 +44,11 @@
                     class="fa fa-shopping-cart" style="color: #F22E00"></i>
                 购物车
             </a></li>
-            <li><a href="${pageContext.request.contextPath}/info/favorite"> <i
-                    class="fa fa-star"></i> 收藏夹
-            </a></li>
+            <c:if test="${sessionScope.user.seller}">
+                <li><a href="${pageContext.request.contextPath}/info/favorite"> <i
+                        class="fa fa-home"></i> 我的店铺
+                </a></li>
+            </c:if>
         </ul>
     </div>
 </div>

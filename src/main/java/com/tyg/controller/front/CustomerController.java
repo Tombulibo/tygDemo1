@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class CustomerController {
     @Autowired
     UserService userService;
 
@@ -48,7 +48,7 @@ public class UserController {
             return "login";
         }
         session.setAttribute("user",rightUser);
-        return "main";
+        return "redirect:/main";
     }
     @RequestMapping("register")
     public String register() {
@@ -66,7 +66,7 @@ public class UserController {
         }
         else {
             userService.addUser(user);
-            return  "login";
+            return  "redirect:/user/login";
         }
     }
     @RequestMapping("/logout")

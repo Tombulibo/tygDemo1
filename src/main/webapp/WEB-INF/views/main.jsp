@@ -379,31 +379,31 @@
                 <div class="bd">
                     <div class="data">
                         <ul>
-                            <c:forEach items="${digGoods}" var="goods">
+                            <c:forEach items="${digGoods}" var="diggoods">
                                 <li class="data-item-li">
                                     <div class="to-big">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${goods.id}"><img src="${pageContext.request.contextPath}/shopimage/${goods.imagePaths[0].path}" alt=""
+                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${diggoods.id}"><img src="${pageContext.request.contextPath}/shopimage/${diggoods.imagePaths[0].path}" alt=""
                                                                                                                           width="200" height="200"/>
                                         </a>
                                     </div>
                                     <p class="text-right">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${goods.id}">${goods.name}</a>
+                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${diggoods.id}">${diggoods.name}</a>
                                     </p>
                                     <div class="text-right">
-                                        <b>￥${goods.price}</b>
+                                        <b>￥${diggoods.price}</b>
                                     </div>
                                     <%--
                                     <div>
-                                        <c:if test="${goods.fav}">
+                                        <c:if test="${diggoods.fav}">
                                             <button
                                                     class="like-button glyphicon glyphicon-heart btn btn-default"
-                                                    data-id="${goods.goodsid}"
+                                                    data-id="${diggoods.goodsid}"
                                                     style="display: none;"></button>
                                         </c:if>
-                                        <c:if test="${!goods.fav}">
+                                        <c:if test="${!diggoods.fav}">
                                             <button
                                                     class="like-button glyphicon glyphicon-heart-empty btn btn-default"
-                                                    data-id="${goods.goodsid}"
+                                                    data-id="${diggoods.goodsid}"
                                                     style="display: none;"></button>
                                         </c:if>
                                         <!-- <button class="like-button1 glyphicon glyphicon-heart-empty btn btn-default "></button> -->
@@ -433,32 +433,33 @@
                             <c:forEach items="${houseGoods}" var="housegoods">
                                 <li class="data-item-li">
                                     <div class="to-big">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${housegoods.goodsid}"> <img
-                                                src="/shopimage/${housegoods.imagePaths[0].path}" alt=""
-                                                width="200" height="200">
+                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${housegoods.id}"><img src="${pageContext.request.contextPath}/shopimage/${housegoods.imagePaths[0].path}" alt=""
+                                                                                                                     width="200" height="200"/>
                                         </a>
                                     </div>
                                     <p class="text-right">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${housegoods.goodsid}">${housegoods.goodsname}</a>
+                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${housegoods.id}">${housegoods.name}</a>
                                     </p>
                                     <div class="text-right">
                                         <b>￥${housegoods.price}</b>
                                     </div>
-                                    <div>
-                                        <c:if test="${housegoods.fav}">
-                                            <button
-                                                    class="like-button glyphicon glyphicon-heart btn btn-default"
-                                                    data-id="${housegoods.goodsid}"
-                                                    style="display: none;"></button>
-                                        </c:if>
-                                        <c:if test="${!housegoods.fav}">
-                                            <button
-                                                    class="like-button glyphicon glyphicon-heart-empty btn btn-default"
-                                                    data-id="${housegoods.goodsid}"
-                                                    style="display: none;"></button>
-                                        </c:if>
-                                        <!-- <button class="like-button1 glyphicon glyphicon-heart-empty btn btn-default "></button> -->
-                                    </div>
+                                        <%--
+                                        <div>
+                                            <c:if test="${housegoods.fav}">
+                                                <button
+                                                        class="like-button glyphicon glyphicon-heart btn btn-default"
+                                                        data-id="${housegoods.goodsid}"
+                                                        style="display: none;"></button>
+                                            </c:if>
+                                            <c:if test="${!housegoods.fav}">
+                                                <button
+                                                        class="like-button glyphicon glyphicon-heart-empty btn btn-default"
+                                                        data-id="${housegoods.goodsid}"
+                                                        style="display: none;"></button>
+                                            </c:if>
+                                            <!-- <button class="like-button1 glyphicon glyphicon-heart-empty btn btn-default "></button> -->
+                                        </div>
+                                        --%>
                                 </li>
                             </c:forEach>
 
@@ -480,31 +481,31 @@
                 <div class="bd">
                     <div class="data">
                         <ul>
-                            <c:forEach items="${colGoods}" var="goods">
+                            <c:forEach items="${colGoods}" var="colgoods">
                                 <li class="data-item-li">
                                     <div class="to-big">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${goods.id}"><img src="${pageContext.request.contextPath}/shopimage/${goods.imagePaths[0].path}" alt=""
+                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${colgoods.id}"><img src="${pageContext.request.contextPath}/shopimage/${colgoods.imagePaths[0].path}" alt=""
                                                                                                                      width="200" height="200"/>
                                         </a>
                                     </div>
                                     <p class="text-right">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${goods.id}">${goods.name}</a>
+                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${colgoods.id}">${colgoods.name}</a>
                                     </p>
                                     <div class="text-right">
-                                        <b>￥${goods.price}</b>
+                                        <b>￥${colgoods.price}</b>
                                     </div>
                                         <%--
                                         <div>
-                                            <c:if test="${goods.fav}">
+                                            <c:if test="${colgoods.fav}">
                                                 <button
                                                         class="like-button glyphicon glyphicon-heart btn btn-default"
-                                                        data-id="${goods.goodsid}"
+                                                        data-id="${colgoods.goodsid}"
                                                         style="display: none;"></button>
                                             </c:if>
-                                            <c:if test="${!goods.fav}">
+                                            <c:if test="${!colgoods.fav}">
                                                 <button
                                                         class="like-button glyphicon glyphicon-heart-empty btn btn-default"
-                                                        data-id="${goods.goodsid}"
+                                                        data-id="${colgoods.goodsid}"
                                                         style="display: none;"></button>
                                             </c:if>
                                             <!-- <button class="like-button1 glyphicon glyphicon-heart-empty btn btn-default "></button> -->
@@ -533,17 +534,18 @@
                             <c:forEach items="${bookGoods}" var="bookgoods">
                                 <li class="data-item-li">
                                     <div class="to-big">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${bookgoods.goodsid}"> <img
+                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${bookgoods.id}"> <img
                                                 src="/shopimage/${bookgoods.imagePaths[0].path}" alt=""
                                                 width="200" height="200">
                                         </a>
                                     </div>
                                     <p class="text-right">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${bookgoods.goodsid}">${bookgoods.goodsname}</a>
+                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${bookgoods.id}">${bookgoods.name}</a>
                                     </p>
                                     <div class="text-right">
                                         <b>￥${bookgoods.price}</b>
                                     </div>
+                                    <%--
                                     <div>
                                         <c:if test="${bookgoods.fav}">
                                             <button
@@ -559,6 +561,7 @@
                                         </c:if>
                                         <!-- <button class="like-button1 glyphicon glyphicon-heart-empty btn btn-default "></button> -->
                                     </div>
+                                    --%>
                                 </li>
                             </c:forEach>
 
