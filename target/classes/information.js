@@ -18,7 +18,7 @@ $(document).ready(function(){
         saveInfo.telephone=$("#telephone").val();
         $.ajax({
             type: "POST",
-            url: "/shop/saveInfo",
+            url: "user/saveInfo",
             contentType:"application/x-www-form-urlencoded; charset=utf-8",
             data:saveInfo,
             dateType:"json",

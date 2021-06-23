@@ -40,6 +40,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/webapp/image" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/webapp/js" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/webapp/shopimage" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -71,5 +72,7 @@
     <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.20" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.43" level="application_server_libraries" />
+    <orderEntry type="library" name="material" level="application" />
+    <orderEntry type="library" name="material.cyan-light_blue" level="application" />
   </component>
 </module>

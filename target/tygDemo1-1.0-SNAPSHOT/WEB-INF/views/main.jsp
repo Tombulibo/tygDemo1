@@ -382,12 +382,12 @@
                             <c:forEach items="${digGoods}" var="diggoods">
                                 <li class="data-item-li">
                                     <div class="to-big">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${diggoods.id}"><img src="${pageContext.request.contextPath}/shopimage/${diggoods.imagePaths[0].path}" alt=""
+                                        <a href="${pageContext.request.contextPath}/detail?id=${diggoods.id}"><img src="${pageContext.request.contextPath}/shopimage/${diggoods.imagePaths[0].path}" alt=""
                                                                                                                           width="200" height="200"/>
                                         </a>
                                     </div>
                                     <p class="text-right">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${diggoods.id}">${diggoods.name}</a>
+                                        <a href="${pageContext.request.contextPath}/detail?id=${diggoods.id}">${diggoods.name}</a>
                                     </p>
                                     <div class="text-right">
                                         <b>￥${diggoods.price}</b>
@@ -433,12 +433,12 @@
                             <c:forEach items="${houseGoods}" var="housegoods">
                                 <li class="data-item-li">
                                     <div class="to-big">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${housegoods.id}"><img src="${pageContext.request.contextPath}/shopimage/${housegoods.imagePaths[0].path}" alt=""
+                                        <a href="${pageContext.request.contextPath}/detail?id=${housegoods.id}"><img src="${pageContext.request.contextPath}/shopimage/${housegoods.imagePaths[0].path}" alt=""
                                                                                                                      width="200" height="200"/>
                                         </a>
                                     </div>
                                     <p class="text-right">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${housegoods.id}">${housegoods.name}</a>
+                                        <a href="${pageContext.request.contextPath}/detail?id=${housegoods.id}">${housegoods.name}</a>
                                     </p>
                                     <div class="text-right">
                                         <b>￥${housegoods.price}</b>
@@ -484,12 +484,12 @@
                             <c:forEach items="${colGoods}" var="colgoods">
                                 <li class="data-item-li">
                                     <div class="to-big">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${colgoods.id}"><img src="${pageContext.request.contextPath}/shopimage/${colgoods.imagePaths[0].path}" alt=""
+                                        <a href="${pageContext.request.contextPath}/detail?id=${colgoods.id}"><img src="${pageContext.request.contextPath}/shopimage/${colgoods.imagePaths[0].path}" alt=""
                                                                                                                      width="200" height="200"/>
                                         </a>
                                     </div>
                                     <p class="text-right">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${colgoods.id}">${colgoods.name}</a>
+                                        <a href="${pageContext.request.contextPath}/detail?id=${colgoods.id}">${colgoods.name}</a>
                                     </p>
                                     <div class="text-right">
                                         <b>￥${colgoods.price}</b>
@@ -534,13 +534,13 @@
                             <c:forEach items="${bookGoods}" var="bookgoods">
                                 <li class="data-item-li">
                                     <div class="to-big">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${bookgoods.id}"> <img
+                                        <a href="${pageContext.request.contextPath}/detail?id=${bookgoods.id}"> <img
                                                 src="/shopimage/${bookgoods.imagePaths[0].path}" alt=""
                                                 width="200" height="200">
                                         </a>
                                     </div>
                                     <p class="text-right">
-                                        <a href="${pageContext.request.contextPath}/detail?goodsid=${bookgoods.id}">${bookgoods.name}</a>
+                                        <a href="${pageContext.request.contextPath}/detail?id=${bookgoods.id}">${bookgoods.name}</a>
                                     </p>
                                     <div class="text-right">
                                         <b>￥${bookgoods.price}</b>

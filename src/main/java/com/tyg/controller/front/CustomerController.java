@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -22,10 +23,12 @@ public class CustomerController {
         model.addAttribute("users", userService.getUsers());
         return "user_list";
     }
+
     @RequestMapping("/login")
     public String login() {
         return "login";
     }
+
     @RequestMapping("/confirmLogin")
     public String confirmLogin(HttpServletRequest request, Model model, @RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("confirmlogo") String confirmlogo) {
 
@@ -50,10 +53,12 @@ public class CustomerController {
         session.setAttribute("user",rightUser);
         return "redirect:/main";
     }
+
     @RequestMapping("register")
     public String register() {
         return "register";
     }
+
     @RequestMapping("/registerResult")
     public String registerResult(User user,@RequestParam("username") String username,Model registerResult) {
 
@@ -69,12 +74,14 @@ public class CustomerController {
             return  "redirect:/user/login";
         }
     }
+
     @RequestMapping("/logout")
     public String logout(HttpServletRequest request){
         HttpSession session=request.getSession();
         session.removeAttribute("user");
-        return "login";
+        return "redirect:/user/login";
     }
+
     @RequestMapping("/information")
     public String information(Model userModel,HttpServletRequest request){
         HttpSession session=request.getSession();
@@ -82,13 +89,35 @@ public class CustomerController {
         user=(User) session.getAttribute("user");
         if (user==null)
         {
-            return "login";
+            return "redirect:/user/login";
         }
         String username =user.getUsername();
         user=userService.getUserByName(username);
         userModel.addAttribute("user",user);
         return "information";
     }
+
+    @RequestMapping("/saveInfo")
+    @ResponseBody
+    public String saveInfo(String name, String email, String telephone,HttpServletRequest request){
+        System.out.println(1);
+        HttpSession session=request.getSession();
+        User user,updateUser=new User();
+        user=(User)session.getAttribute("user");
+        String username = user.getUsername();
+        System.out.println(username);
+        System.out.println(name);
+        if (username.equals(name) && userService.getUserByName(name)==null)
+        {
+            updateUser.setUsername(name);
+            updateUser.setEmail(email);
+            updateUser.setTelephone(telephone);
+            userService.updateUser(updateUser);
+            return "更新成功";
+        }
+        else  {return "更新失败";}
+    }
+
     @RequestMapping("/toEdit")
     public String toEdit(Model model,@RequestParam("username") String username) {
         //从数据库从把product取出来
